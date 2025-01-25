@@ -2,9 +2,11 @@ import Button from "antd/lib/button";
 import Form from "antd/lib/form";
 import Input from "antd/lib/input";
 import Switch from "antd/lib/switch";
+import Select from "antd/lib/select";
 
 import { User } from "../../../types/admin/Users";
 import { useEffect } from "react";
+import { Role } from "../../../types/admin/Role";
 
 type UserFormProps = {
   onSubmit: (values: User) => void;
@@ -20,8 +22,12 @@ const UserForm = ({ onSubmit, isLoading, userData, close }: UserFormProps) => {
       form.setFieldsValue(userData);
     }
   }, [userData, form]);
-  console.log(userData);
 
+  const roleOptions = Object.values(Role).map((role) => ({
+    label: role,
+    value: role,
+  }));
+  console.log(roleOptions);
   return (
     <>
       <Form
@@ -67,6 +73,9 @@ const UserForm = ({ onSubmit, isLoading, userData, close }: UserFormProps) => {
           <Input placeholder="Email" type="email" />
         </Form.Item>
 
+        <Form.Item label="Role" name="role">
+          <Select placeholder="Role" options={roleOptions} />
+        </Form.Item>
         <Form.Item label="Active" name="isActive" valuePropName="checked">
           <Switch defaultChecked />
         </Form.Item>

@@ -7,34 +7,46 @@ interface UsersTableProps {
   usersData: User[];
   handleUserIdChange: (id: string) => void;
   handleOpenModal: (isOpen: boolean) => void;
+  handleDeleteUser: (id: string) => void;
 }
 
 const UsersTable: React.FC<UsersTableProps> = ({
   usersData,
   handleOpenModal,
   handleUserIdChange,
+  handleDeleteUser,
 }) => {
-  const onEdit = useCallback(
-    (record: User) => {
+  const handleEdit = useCallback(
+    (record: User) => () => {
       handleOpenModal(true);
       handleUserIdChange(record.id);
+      // onEdit(record);
     },
     [handleOpenModal, handleUserIdChange]
   );
-  const handleClick = useCallback(
-    (record: User) => () => {
-      onEdit(record);
+  const onDelete = useCallback(
+    (id: string) => () => {
+      handleDeleteUser(id);
     },
-    [onEdit]
+    [handleDeleteUser]
   );
 
   const actions = [
     {
       title: "Actions",
-      dataIndex: "action",
+      dataIndex: "edit",
       render: (_: unknown, record: User) => (
         <div className="table_action_btn">
-          <div onClick={handleClick(record)}>Edit</div>
+          <span style={{ color: "green" }} onClick={handleEdit(record)}>
+            Edit
+          </span>
+
+          <span
+            style={{ color: "red", marginLeft: "5px" }}
+            onClick={onDelete(record.id)}
+          >
+            Delete
+          </span>
         </div>
       ),
     },

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import UsersTable from "../../components/Admin/UsersTable";
 import {
+  useDeleteUserMutation,
   useGetUserByIdQuery,
   useGetUsersQuery,
   useUpdateUserMutation,
@@ -17,9 +18,9 @@ const UserManagement = () => {
   const { data: usersData } = useGetUsersQuery({});
   const users = usersData;
   const { data: userData } = useGetUserByIdQuery(userId, { skip: !userId });
-  console.log(userId);
 
   const [updateUser] = useUpdateUserMutation();
+  const [deleteUser] = useDeleteUserMutation();
   const handleUpdateUser = (values: User) => {
     updateUser({ ...values })
       .unwrap()
@@ -30,17 +31,31 @@ const UserManagement = () => {
         console.error("Error updating user:", error);
       });
   };
+  const handleDeleteUser = (id: string) => {
+    deleteUser(id)
+      .unwrap()
+      .then(() => {
+        // setOpenModal(false);
+      })
+      .catch((error) => {
+        console.error("Error updating user:", error);
+      });
+  };
   const handleCloseModal = () => {
     setOpenModal(false);
   };
+
   return (
     <>
       <Link to="/orders">Orders</Link>
-      <UsersTable
-        handleOpenModal={setOpenModal}
-        usersData={users}
-        handleUserIdChange={setUserId}
-      />
+      {users && (
+        <UsersTable
+          handleOpenModal={setOpenModal}
+          usersData={users}
+          handleUserIdChange={setUserId}
+          handleDeleteUser={handleDeleteUser}
+        />
+      )}
       <GlobalModal
         title="Update User"
         open={openModal}

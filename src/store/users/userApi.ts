@@ -14,6 +14,7 @@ export const usersApi = api.injectEndpoints({
         url: `users/${userId}`,
         method: "GET",
       }),
+      keepUnusedDataFor: 0,
     }),
     updateUser: builder.mutation({
       query: (userData) => ({
@@ -23,8 +24,19 @@ export const usersApi = api.injectEndpoints({
       }),
       invalidatesTags: ["Users"],
     }),
+    deleteUser: builder.mutation({
+      query: (id) => ({
+        url: `users/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Users"],
+    }),
   }),
 });
 
-export const { useGetUsersQuery, useGetUserByIdQuery, useUpdateUserMutation } =
-  usersApi;
+export const {
+  useGetUsersQuery,
+  useGetUserByIdQuery,
+  useUpdateUserMutation,
+  useDeleteUserMutation,
+} = usersApi;
