@@ -20,7 +20,7 @@ export const columns: TableColumnsType<User> = [
   },
   {
     title: "Active",
-    dataIndex: "active",
-    render: (blocked: number) => (blocked ? "Yes" : "No"),
+    dataIndex: "isActive",
+    render: (active: boolean) => (active ? "Yes" : "No"),
   },
 ];

@@ -1,4 +1,4 @@
-import { Table } from "antd";
+import Table from "antd/lib/table/Table";
 import { ColumnType } from "antd/es/table";
 import GlobalTableContainer from "./GlobalTable.style";
 
