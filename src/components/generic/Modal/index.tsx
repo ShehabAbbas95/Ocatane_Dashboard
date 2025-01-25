@@ -6,9 +6,16 @@ type ModalProps = {
   children: ReactNode;
   width?: string;
   title: string;
+  handleClose: (isOpen: boolean) => void;
 };
 
-const GlobalModal = ({ title, open, width = "60%", children }: ModalProps) => {
+const GlobalModal = ({
+  title,
+  open,
+  width = "60%",
+  children,
+  handleClose,
+}: ModalProps) => {
   return (
     <Modal
       title={title}
@@ -16,6 +23,7 @@ const GlobalModal = ({ title, open, width = "60%", children }: ModalProps) => {
       open={open}
       children={children}
       footer={null}
+      onCancel={() => handleClose(false)}
     />
   );
 };

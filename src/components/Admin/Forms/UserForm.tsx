@@ -1,16 +1,26 @@
-import { Button, Form, Input, Select } from "antd";
+import Button from "antd/lib/button";
+import Form from "antd/lib/form";
+import Input from "antd/lib/input";
+import Switch from "antd/lib/switch";
 
 import { User } from "../../../types/admin/Users";
+import { useEffect } from "react";
 
 type UserFormProps = {
   onSubmit: (values: User) => void;
-  close: () => void;
   isLoading: boolean;
   userData?: User;
+  close: () => void;
 };
 
-const UserForm = ({ onSubmit, isLoading, userData }: UserFormProps) => {
+const UserForm = ({ onSubmit, isLoading, userData, close }: UserFormProps) => {
   const [form] = Form.useForm();
+  useEffect(() => {
+    if (userData) {
+      form.setFieldsValue(userData);
+    }
+  }, [userData, form]);
+  console.log(userData);
 
   return (
     <>
@@ -23,7 +33,7 @@ const UserForm = ({ onSubmit, isLoading, userData }: UserFormProps) => {
         }}
         form={form}
       >
-        <Form.Item label="User Id" name="userId">
+        <Form.Item label="User Id" name="id">
           <Input placeholder="User Id" disabled={true} />
         </Form.Item>
         <Form.Item
@@ -57,17 +67,9 @@ const UserForm = ({ onSubmit, isLoading, userData }: UserFormProps) => {
           <Input placeholder="Email" type="email" />
         </Form.Item>
 
-        {userData && (
-          <Form.Item label="Block User" name="isActive">
-            <Select
-              placeholder="Select"
-              options={[
-                { label: "Yes", value: true },
-                { label: "No", value: false },
-              ]}
-            />
-          </Form.Item>
-        )}
+        <Form.Item label="Active" name="isActive" valuePropName="checked">
+          <Switch defaultChecked />
+        </Form.Item>
       </Form>
       <Button
         className="submit_btn"
@@ -80,6 +82,7 @@ const UserForm = ({ onSubmit, isLoading, userData }: UserFormProps) => {
         className="reset_btn"
         onClick={() => {
           form.resetFields();
+          close();
         }}
       >
         Cancel
