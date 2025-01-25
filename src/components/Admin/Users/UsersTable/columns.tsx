@@ -1,5 +1,5 @@
 import { TableColumnsType } from "antd";
-import { User } from "../../../types/admin/Users";
+import { User } from "../../../../types/admin/Users";
 
 export const columns: TableColumnsType<User> = [
   {
