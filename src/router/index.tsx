@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-import UserManagement from "../pages/admin/UserManagment";
+import { UserManagement } from "../pages/index";
+import { SalesOrderManagment } from "../pages/index";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
   {
     path: "/orders",
     // use user management for now
-    element: <UserManagement />,
+    element: <SalesOrderManagment />,
   },
 ]);
 
