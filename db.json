@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@example.com",
+      "age": 28,
+      "role": "user",
+      "isActive": true,
+      "createdAt": "2024-01-15T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "email": "jane.smith@example.com",
+      "age": 32,
+      "role": "admin",
+      "isActive": true,
+      "createdAt": "2024-01-15T11:00:00Z"
+    }
+  ]
+}
