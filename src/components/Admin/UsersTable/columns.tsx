@@ -4,7 +4,7 @@ import { User } from "../../../types/admin/Users";
 export const columns: TableColumnsType<User> = [
   {
     title: "User Id",
-    dataIndex: "userId",
+    dataIndex: "id",
   },
   {
     title: "Name",
