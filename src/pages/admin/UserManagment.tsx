@@ -5,6 +5,7 @@ import UsersTable from "../../components/Admin/UsersTable";
 import {
   useGetUserByIdQuery,
   useGetUsersQuery,
+  useUpdateUserMutation,
 } from "../../store/users/userApi";
 import GlobalModal from "../../components/generic/Modal";
 import { User } from "../../types/admin/Users";
@@ -17,7 +18,18 @@ const UserManagement = () => {
   const users = usersData;
   const { data: userData } = useGetUserByIdQuery(userId, { skip: !userId });
   console.log(userId);
-  const handleUpdateUser = (values: User) => {};
+
+  const [updateUser] = useUpdateUserMutation();
+  const handleUpdateUser = (values: User) => {
+    updateUser({ ...values })
+      .unwrap()
+      .then(() => {
+        setOpenModal(false);
+      })
+      .catch((error) => {
+        console.error("Error updating user:", error);
+      });
+  };
   const handleCloseModal = () => {
     setOpenModal(false);
   };
