@@ -8,6 +8,8 @@ interface UsersTableProps {
   handleUserIdChange: (id: string) => void;
   handleOpenModal: (isOpen: boolean) => void;
   handleDeleteUser: (id: string) => void;
+  loading: boolean;
+  deleting: boolean;
 }
 
 const UsersTable: React.FC<UsersTableProps> = ({
@@ -15,6 +17,8 @@ const UsersTable: React.FC<UsersTableProps> = ({
   handleOpenModal,
   handleUserIdChange,
   handleDeleteUser,
+  loading,
+  deleting,
 }) => {
   const handleEdit = useCallback(
     (record: User) => () => {
@@ -51,7 +55,14 @@ const UsersTable: React.FC<UsersTableProps> = ({
       ),
     },
   ];
-  return <GlobalTable data={usersData} columns={[...columns, ...actions]} />;
+  return (
+    <GlobalTable
+      rowKeyName="id"
+      loading={loading || deleting}
+      data={usersData}
+      columns={[...columns, ...actions]}
+    />
+  );
 };
 
 export default UsersTable;

@@ -15,12 +15,15 @@ import UserForm from "../../components/Admin/Forms/UserForm";
 const UserManagement = () => {
   const [userId, setUserId] = useState<string>();
   const [openModal, setOpenModal] = useState(false);
-  const { data: usersData } = useGetUsersQuery({});
+  const { data: usersData, isFetching: loadingUsers } = useGetUsersQuery({});
   const users = usersData;
-  const { data: userData } = useGetUserByIdQuery(userId, { skip: !userId });
+  const { data: userData, isFetching: fetchingUser } = useGetUserByIdQuery(
+    userId,
+    { skip: !userId }
+  );
 
-  const [updateUser] = useUpdateUserMutation();
-  const [deleteUser] = useDeleteUserMutation();
+  const [updateUser, { isLoading: updating }] = useUpdateUserMutation();
+  const [deleteUser, { isLoading: deleting }] = useDeleteUserMutation();
   const handleUpdateUser = (values: User) => {
     updateUser({ ...values })
       .unwrap()
@@ -48,14 +51,16 @@ const UserManagement = () => {
   return (
     <>
       <Link to="/orders">Orders</Link>
-      {users && (
-        <UsersTable
-          handleOpenModal={setOpenModal}
-          usersData={users}
-          handleUserIdChange={setUserId}
-          handleDeleteUser={handleDeleteUser}
-        />
-      )}
+
+      <UsersTable
+        handleOpenModal={setOpenModal}
+        usersData={users}
+        handleUserIdChange={setUserId}
+        handleDeleteUser={handleDeleteUser}
+        loading={loadingUsers}
+        deleting={deleting}
+      />
+
       <GlobalModal
         title="Update User"
         open={openModal}
@@ -63,9 +68,10 @@ const UserManagement = () => {
       >
         <UserForm
           userData={userData}
-          isLoading={false}
+          isLoading={updating}
           onSubmit={handleUpdateUser}
           close={handleCloseModal}
+          fetchingUser={fetchingUser}
         />
       </GlobalModal>
     </>
