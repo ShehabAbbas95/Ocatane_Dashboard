@@ -2,23 +2,181 @@
   "users": [
     {
       "id": "1",
-      "firstName": "John",
-      "lastName": "Doe",
+      "name": "John Doe",
       "email": "john.doe@example.com",
-      "age": 28,
-      "role": "user",
-      "isActive": true,
-      "createdAt": "2024-01-15T10:00:00Z"
+      "role": "USER",
+      "isActive": true
     },
     {
       "id": "2",
-      "firstName": "Jane",
-      "lastName": "Smith",
+      "name": "Jane Smith",
       "email": "jane.smith@example.com",
       "age": 32,
-      "role": "admin",
+      "role": "USER",
       "isActive": true,
       "createdAt": "2024-01-15T11:00:00Z"
+    },
+    {
+      "id": "3",
+      "name": "Michael Johnson",
+      "email": "michael.j@example.com",
+      "age": 45,
+      "role": "GUEST",
+      "isActive": true,
+      "createdAt": "2024-01-16T09:00:00Z"
+    },
+    {
+      "id": "4",
+      "name": "Sarah Williams",
+      "email": "sarah.w@example.com",
+      "age": 29,
+      "role": "USER",
+      "isActive": false,
+      "createdAt": "2024-01-16T10:30:00Z"
+    },
+    {
+      "id": "5",
+      "name": "Robert Brown",
+      "email": "robert.b@example.com",
+      "age": 38,
+      "role": "ADMIN",
+      "isActive": true,
+      "createdAt": "2024-01-17T08:15:00Z"
+    },
+    {
+      "id": "6",
+      "name": "Emily Davis",
+      "email": "emily.d@example.com",
+      "age": 31,
+      "role": "USER",
+      "isActive": true,
+      "createdAt": "2024-01-17T14:20:00Z"
+    },
+    {
+      "id": "7",
+      "name": "David Miller",
+      "email": "david.m@example.com",
+      "age": 42,
+      "role": "GUEST",
+      "isActive": true,
+      "createdAt": "2024-01-18T11:45:00Z"
+    },
+    {
+      "id": "8",
+      "name": "Lisa Anderson",
+      "email": "lisa.a@example.com",
+      "age": 35,
+      "role": "USER",
+      "isActive": true,
+      "createdAt": "2024-01-18T16:30:00Z"
+    },
+    {
+      "id": "9",
+      "name": "James Wilson",
+      "email": "james.w@example.com",
+      "age": 47,
+      "role": "ADMIN",
+      "isActive": true,
+      "createdAt": "2024-01-19T09:20:00Z"
+    },
+    {
+      "id": "10",
+      "name": "Jennifer Taylor",
+      "email": "jennifer.t@example.com",
+      "age": 33,
+      "role": "USER",
+      "isActive": false,
+      "createdAt": "2024-01-19T13:10:00Z"
+    },
+    {
+      "id": "11",
+      "name": "Daniel Martinez",
+      "email": "daniel.m@example.com",
+      "age": 39,
+      "role": "GUEST",
+      "isActive": true,
+      "createdAt": "2024-01-20T10:15:00Z"
+    },
+    {
+      "id": "12",
+      "name": "Michelle Lee",
+      "email": "michelle.l@example.com",
+      "age": 36,
+      "role": "USER",
+      "isActive": true,
+      "createdAt": "2024-01-20T15:45:00Z"
+    },
+    {
+      "id": "13",
+      "name": "Christopher White",
+      "email": "chris.w@example.com",
+      "age": 41,
+      "role": "ADMIN",
+      "isActive": true,
+      "createdAt": "2024-01-21T08:30:00Z"
+    },
+    {
+      "id": "14",
+      "name": "Amanda Clark",
+      "email": "amanda.c@example.com",
+      "age": 34,
+      "role": "USER",
+      "isActive": true,
+      "createdAt": "2024-01-21T14:20:00Z"
+    },
+    {
+      "id": "15",
+      "name": "Kevin Rodriguez",
+      "email": "kevin.r@example.com",
+      "age": 37,
+      "role": "GUEST",
+      "isActive": true,
+      "createdAt": "2024-01-22T09:40:00Z"
+    },
+    {
+      "id": "16",
+      "name": "Jessica Thompson",
+      "email": "jessica.t@example.com",
+      "age": 30,
+      "role": "USER",
+      "isActive": false,
+      "createdAt": "2024-01-22T16:15:00Z"
+    },
+    {
+      "id": "17",
+      "name": "Brian Moore",
+      "email": "brian.m@example.com",
+      "age": 43,
+      "role": "ADMIN",
+      "isActive": true,
+      "createdAt": "2024-01-23T11:30:00Z"
+    },
+    {
+      "id": "18",
+      "name": "Rachel Garcia",
+      "email": "rachel.g@example.com",
+      "age": 31,
+      "role": "USER",
+      "isActive": true,
+      "createdAt": "2024-01-23T15:50:00Z"
+    },
+    {
+      "id": "19",
+      "name": "Steven Martinez",
+      "email": "steven.m@example.com",
+      "age": 44,
+      "role": "GUEST",
+      "isActive": true,
+      "createdAt": "2024-01-24T10:20:00Z"
+    },
+    {
+      "id": "20",
+      "name": "Nicole Adams",
+      "email": "nicole.a@example.com",
+      "age": 35,
+      "role": "USER",
+      "isActive": true,
+      "createdAt": "2024-01-24T14:45:00Z"
     }
   ]
 }
