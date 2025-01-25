@@ -7,6 +7,7 @@ export const usersApi = api.injectEndpoints({
         url: "users",
         method: "GET",
       }),
+      providesTags: ["Users"],
     }),
     getUserById: builder.query({
       query: (userId) => ({
@@ -20,6 +21,7 @@ export const usersApi = api.injectEndpoints({
         method: "PUT",
         body: userData,
       }),
+      invalidatesTags: ["Users"],
     }),
   }),
 });
