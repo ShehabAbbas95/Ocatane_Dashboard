@@ -11,11 +11,16 @@ import {
 } from "../../store/sales/ordersApi";
 import OrderForm from "../../components/Sales/Forms";
 import { Order } from "../../types/sale/order";
+import { useGetUsersQuery } from "../../store/users/userApi";
 
 const SalesOrderManagement = () => {
   const [userId, setUserId] = useState<string>();
   const [openModal, setOpenModal] = useState(false);
   const { data: ordersData, isFetching: loadingOrders } = useGetOrdersQuery({});
+
+  // ensure users are state are avilable without api call
+  const { data: usersData } = useGetUsersQuery({});
+  console.log(usersData);
   const orders = ordersData;
   const { data: orderData, isFetching: fetchingOrder } = useGetOrderByIdQuery(
     userId,
@@ -48,7 +53,7 @@ const SalesOrderManagement = () => {
 
   return (
     <>
-      <Link to="/orders">Orders</Link>
+      <Link to="/users">Users</Link>
 
       <OrdersTable
         handleOpenModal={setOpenModal}

@@ -1,5 +1,6 @@
 import { TableColumnsType } from "antd";
 import { Order } from "../../../types/sale/order";
+import dayjs from "dayjs";
 
 export const columns: TableColumnsType<Order> = [
   {
@@ -17,7 +18,7 @@ export const columns: TableColumnsType<Order> = [
   {
     title: "Order Date",
     dataIndex: "orderDate",
-    render: (active: boolean) => (active ? "Yes" : "No"),
+    render: (date: string) => dayjs(date).format("DD/MM/YYYY"),
   },
   {
     title: "Total",

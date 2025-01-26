@@ -40,12 +40,15 @@ const OrdersTable: React.FC<OrdersTableProps> = ({
       dataIndex: "edit",
       render: (_: unknown, record: Order) => (
         <div className="table_action_btn">
-          <span style={{ color: "green" }} onClick={handleEdit(record)}>
+          <span
+            style={{ color: "green", cursor: "pointer" }}
+            onClick={handleEdit(record)}
+          >
             Edit
           </span>
 
           <span
-            style={{ color: "red", marginLeft: "5px" }}
+            style={{ color: "red", marginLeft: "5px", cursor: "pointer" }}
             onClick={onDelete(record.id)}
           >
             Delete
@@ -56,6 +59,7 @@ const OrdersTable: React.FC<OrdersTableProps> = ({
   ];
   return (
     <GlobalTable
+      withSearch={true}
       rowKeyName="id"
       loading={loading || deleting}
       data={orderData}

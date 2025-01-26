@@ -41,12 +41,15 @@ const UsersTable: React.FC<UsersTableProps> = ({
       dataIndex: "edit",
       render: (_: unknown, record: User) => (
         <div className="table_action_btn">
-          <span style={{ color: "green" }} onClick={handleEdit(record)}>
+          <span
+            style={{ color: "green", cursor: "pointer" }}
+            onClick={handleEdit(record)}
+          >
             Edit
           </span>
 
           <span
-            style={{ color: "red", marginLeft: "5px" }}
+            style={{ color: "red", marginLeft: "5px", cursor: "pointer" }}
             onClick={onDelete(record.id)}
           >
             Delete
