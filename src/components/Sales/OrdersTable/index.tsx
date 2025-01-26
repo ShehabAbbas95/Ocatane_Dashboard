@@ -1,45 +1,44 @@
 import { useCallback } from "react";
-import { User } from "../../../../types/admin/Users";
-import GlobalTable from "../../../generic/Table";
+import GlobalTable from "../../generic/Table";
 import { columns } from "./columns";
+import { Order } from "../../../types/sale/order";
 
-interface UsersTableProps {
-  usersData: User[];
+interface OrdersTableProps {
+  orderData: Order[];
   handleUserIdChange: (id: string) => void;
   handleOpenModal: (isOpen: boolean) => void;
-  handleDeleteUser: (id: string) => void;
+  handleDeleteOrder: (id: string) => void;
   loading: boolean;
   deleting: boolean;
 }
 
-const UsersTable: React.FC<UsersTableProps> = ({
-  usersData,
+const OrdersTable: React.FC<OrdersTableProps> = ({
+  orderData,
   handleOpenModal,
   handleUserIdChange,
-  handleDeleteUser,
+  handleDeleteOrder,
   loading,
   deleting,
 }) => {
   const handleEdit = useCallback(
-    (record: User) => () => {
+    (record: Order) => () => {
       handleOpenModal(true);
       handleUserIdChange(record.id);
-      // onEdit(record);
     },
     [handleOpenModal, handleUserIdChange]
   );
   const onDelete = useCallback(
     (id: string) => () => {
-      handleDeleteUser(id);
+      handleDeleteOrder(id);
     },
-    [handleDeleteUser]
+    [handleDeleteOrder]
   );
 
   const actions = [
     {
       title: "Actions",
       dataIndex: "edit",
-      render: (_: unknown, record: User) => (
+      render: (_: unknown, record: Order) => (
         <div className="table_action_btn">
           <span
             style={{ color: "green", cursor: "pointer" }}
@@ -60,12 +59,13 @@ const UsersTable: React.FC<UsersTableProps> = ({
   ];
   return (
     <GlobalTable
+      withSearch={true}
       rowKeyName="id"
       loading={loading || deleting}
-      data={usersData}
+      data={orderData}
       columns={[...columns, ...actions]}
     />
   );
 };
 
-export default UsersTable;
+export default OrdersTable;

@@ -178,5 +178,210 @@
       "isActive": true,
       "createdAt": "2024-01-24T14:45:00Z"
     }
+  ],
+  "orders": [
+    {
+      "id": "ORD001",
+      "customerName": "Standard Package Delivery",
+      "status": "PENDING",
+      "total": 149.99,
+      "date": "2024-01-24T10:00:00Z"
+    },
+    {
+      "id": "ORD002",
+      "customerName": "Express Shipment",
+      "status": "SHIPPED",
+      "total": 299.5,
+      "date": "2024-01-24T11:30:00Z"
+    },
+    {
+      "id": "ORD003",
+      "customerName": "Priority Mail",
+      "status": "DELIVERED",
+      "total": 89.99,
+      "date": "2024-01-23T15:20:00Z"
+    },
+    {
+      "id": "ORD004",
+      "customerName": "Overnight Delivery",
+      "date": "2024-01-23T09:15:00.000Z",
+      "status": "SHIPPED",
+      "total": 199.99
+    },
+    {
+      "id": "ORD005",
+      "customerName": "International Shipping",
+      "date": "2024-01-24T14:45:00.000Z",
+      "status": "SHIPPED",
+      "total": 499.99
+    },
+    {
+      "id": "ORD006",
+      "customerName": "Bulk Order Shipment",
+      "date": "2024-01-24T16:00:00.000Z",
+      "status": "DELIVERED",
+      "total": 789.99
+    },
+    {
+      "id": "ORD007",
+      "customerName": "Same Day Delivery",
+      "status": "DELIVERED",
+      "total": 129.99,
+      "date": "2024-01-24T09:30:00Z"
+    },
+    {
+      "id": "ORD008",
+      "customerName": "Ground Shipping",
+      "status": "PENDING",
+      "total": 79.99,
+      "date": "2024-01-24T11:15:00Z"
+    },
+    {
+      "id": "ORD009",
+      "customerName": "Two-Day Express",
+      "status": "SHIPPED",
+      "total": 159.99,
+      "date": "2024-01-24T13:45:00Z"
+    },
+    {
+      "id": "ORD010",
+      "customerName": "Premium Delivery",
+      "status": "DELIVERED",
+      "total": 399.99,
+      "date": "2024-01-23T14:20:00Z"
+    },
+    {
+      "id": "ORD011",
+      "customerName": "Economy Shipping",
+      "status": "DELIVERED",
+      "total": 59.99,
+      "date": "2024-01-23T16:30:00Z"
+    },
+    {
+      "id": "ORD012",
+      "customerName": "Next Day Air",
+      "status": "CANCELLED",
+      "total": 249.99,
+      "date": "2024-01-23T10:45:00Z"
+    },
+    {
+      "id": "ORD013",
+      "customerName": "International Express",
+      "status": "SHIPPED",
+      "total": 599.99,
+      "date": "2024-01-24T08:15:00Z"
+    },
+    {
+      "id": "ORD014",
+      "customerName": "Standard Ground",
+      "status": "DELIVERED",
+      "total": 89.99,
+      "date": "2024-01-24T12:30:00Z"
+    },
+    {
+      "id": "ORD015",
+      "customerName": "Rush Delivery",
+      "status": "DELIVERED",
+      "total": 179.99,
+      "date": "2024-01-24T15:20:00Z"
+    },
+    {
+      "id": "ORD016",
+      "customerName": "Bulk Transport",
+      "status": "SHIPPED",
+      "total": 899.99,
+      "date": "2024-01-23T11:00:00Z"
+    },
+    {
+      "id": "ORD017",
+      "customerName": "Express Mail",
+      "status": "DELIVERED",
+      "total": 149.99,
+      "date": "2024-01-23T13:45:00Z"
+    },
+    {
+      "id": "ORD018",
+      "customerName": "Priority Express",
+      "status": "PENDING",
+      "total": 299.99,
+      "date": "2024-01-24T09:00:00Z"
+    },
+    {
+      "id": "ORD019",
+      "customerName": "Standard Shipping",
+      "status": "CANCELLED",
+      "total": 69.99,
+      "date": "2024-01-24T14:15:00Z"
+    },
+    {
+      "id": "ORD020",
+      "customerName": "Premium Express",
+      "status": "SHIPPED",
+      "total": 449.99,
+      "date": "2024-01-23T15:30:00Z"
+    },
+    {
+      "id": "ORD021",
+      "customerName": "Economy Ground",
+      "status": "DELIVERED",
+      "total": 49.99,
+      "date": "2024-01-23T12:00:00Z"
+    },
+    {
+      "id": "ORD022",
+      "customerName": "Overnight Special",
+      "status": "PENDING",
+      "total": 279.99,
+      "date": "2024-01-24T10:45:00Z"
+    },
+    {
+      "id": "ORD023",
+      "customerName": "International Priority",
+      "status": "SHIPPED",
+      "total": 699.99,
+      "date": "2024-01-24T13:20:00Z"
+    },
+    {
+      "id": "ORD024",
+      "customerName": "Regular Mail",
+      "status": "DELIVERED",
+      "total": 39.99,
+      "date": "2024-01-23T14:45:00Z"
+    },
+    {
+      "id": "ORD026",
+      "customerName": "Same Day Special",
+      "status": "SHIPPED",
+      "total": 199.99,
+      "date": "2024-01-24T11:30:00Z"
+    },
+    {
+      "id": "ORD027",
+      "customerName": "Ground Express",
+      "status": "CANCELLED",
+      "total": 129.99,
+      "date": "2024-01-24T15:45:00Z"
+    },
+    {
+      "id": "ORD028",
+      "customerName": "Premium Ground",
+      "status": "DELIVERED",
+      "total": 159.99,
+      "date": "2024-01-23T09:15:00Z"
+    },
+    {
+      "id": "ORD029",
+      "customerName": "Economy Express",
+      "status": "PENDING",
+      "total": 99.99,
+      "date": "2024-01-23T13:00:00Z"
+    },
+    {
+      "id": "ORD030",
+      "customerName": "Priority Ground",
+      "status": "SHIPPED",
+      "total": 189.99,
+      "date": "2024-01-24T12:15:00Z"
+    }
   ]
 }
