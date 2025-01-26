@@ -5,9 +5,9 @@ import Switch from "antd/lib/switch";
 import Select from "antd/lib/select";
 import Spin from "antd/lib/spin";
 
+import { User } from "../../../../types/admin/Users";
 import { useEffect } from "react";
-import { User } from "../../../types/admin/Users";
-import { Role } from "../../../types/admin/Role";
+import { Role } from "../../../../types/admin/Role";
 
 type UserFormProps = {
   onSubmit: (values: User) => void;

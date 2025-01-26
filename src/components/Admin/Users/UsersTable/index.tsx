@@ -1,6 +1,6 @@
 import { useCallback } from "react";
-import { User } from "../../../types/admin/Users";
-import GlobalTable from "../../generic/Table";
+import { User } from "../../../../types/admin/Users";
+import GlobalTable from "../../../generic/Table";
 import { columns } from "./columns";
 
 interface UsersTableProps {

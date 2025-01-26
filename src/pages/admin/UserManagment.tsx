@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import UsersTable from "../../components/Admin/UsersTable";
+import UsersTable from "../../components/Admin/Users/UsersTable";
 import {
   useDeleteUserMutation,
   useGetUserByIdQuery,
@@ -10,7 +10,7 @@ import {
 } from "../../store/users/userApi";
 import GlobalModal from "../../components/generic/Modal";
 import { User } from "../../types/admin/Users";
-import UserForm from "../../components/Admin/Forms/UserForm";
+import UserForm from "../../components/Admin/Users/Forms/UserForm";
 
 const UserManagement = () => {
   const [userId, setUserId] = useState<string>();
