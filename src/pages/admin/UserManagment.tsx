@@ -11,6 +11,7 @@ import {
 import GlobalModal from "../../components/generic/Modal";
 import { User } from "../../types/admin/Users";
 import UserForm from "../../components/Admin/Users/Forms/UserForm";
+import { toast } from "react-toastify";
 
 const UserManagement = () => {
   const [userId, setUserId] = useState<string>();
@@ -23,30 +24,27 @@ const UserManagement = () => {
   );
 
   const [updateUser, { isLoading: updating }] = useUpdateUserMutation();
-  console.log(updateUser);
   const [deleteUser, { isLoading: deleting }] = useDeleteUserMutation();
   const handleUpdateUser = (values: User) => {
     updateUser(values)
       .unwrap()
       .then(() => {
         setOpenModal(false);
+        toast.success("User updated successfully");
       })
       .catch((error) => {
-        console.error("Error updating user:", error);
+        toast.error(`Error updating user ${error?.data?.message}`);
       });
   };
   const handleDeleteUser = (id: string) => {
     console.log("called", "handleDeleteUser");
     deleteUser(id)
       .unwrap()
-      .then((res) => {
-        // setOpenModal(false);
-        console.log("called", "delete");
-        console.log("res", res);
-        console.log(usersData);
+      .then(() => {
+        toast.success("User deleted successfully");
       })
       .catch((error) => {
-        console.error("Error updating user:", error);
+        toast.error(`Error deleting user ${error?.data?.message}`);
       });
   };
   const handleCloseModal = () => {
