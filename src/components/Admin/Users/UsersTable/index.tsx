@@ -34,7 +34,6 @@ const UsersTable: React.FC<UsersTableProps> = ({
     },
     [handleDeleteUser]
   );
-
   const actions = [
     {
       title: "Actions",
@@ -44,6 +43,7 @@ const UsersTable: React.FC<UsersTableProps> = ({
           <span
             style={{ color: "green", cursor: "pointer" }}
             onClick={handleEdit(record)}
+            data-testid={`edit-btn-${record.id}`}
           >
             Edit
           </span>

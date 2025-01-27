@@ -23,9 +23,10 @@ const UserManagement = () => {
   );
 
   const [updateUser, { isLoading: updating }] = useUpdateUserMutation();
+  console.log(updateUser);
   const [deleteUser, { isLoading: deleting }] = useDeleteUserMutation();
   const handleUpdateUser = (values: User) => {
-    updateUser({ ...values })
+    updateUser(values)
       .unwrap()
       .then(() => {
         setOpenModal(false);
@@ -35,10 +36,14 @@ const UserManagement = () => {
       });
   };
   const handleDeleteUser = (id: string) => {
+    console.log("called", "handleDeleteUser");
     deleteUser(id)
       .unwrap()
-      .then(() => {
+      .then((res) => {
         // setOpenModal(false);
+        console.log("called", "delete");
+        console.log("res", res);
+        console.log(usersData);
       })
       .catch((error) => {
         console.error("Error updating user:", error);

@@ -57,12 +57,8 @@ const UserForm = ({
             rules={[
               {
                 required: true,
-                pattern: new RegExp(/^[a-zA-Z\s]{8,}$/),
                 message:
                   "Please enter a valid name (letters only, min of 8 chars)",
-                min: 8,
-                max: 32,
-                whitespace: true,
               },
             ]}
           >
